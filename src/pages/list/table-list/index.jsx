@@ -15,7 +15,6 @@ import { queryRule, updateRule, addRule, removeRule } from './service';
 
 const handleAdd = async (fields) => {
   const hide = message.loading('正在添加');
-
   try {
     await addRule({ ...fields });
     hide();
@@ -60,7 +59,6 @@ const handleUpdate = async (fields) => {
 const handleRemove = async (selectedRows) => {
   const hide = message.loading('正在删除');
   if (!selectedRows) return true;
-
   try {
     await removeRule({
       key: selectedRows.map((row) => row.key),
